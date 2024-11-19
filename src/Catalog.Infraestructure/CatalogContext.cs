@@ -21,6 +21,7 @@ public class CatalogContext : DbContext
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.ApplyConfiguration(new ProductEntityTypeConfiguration());
+        builder.Entity<Product>();
     }
 
 

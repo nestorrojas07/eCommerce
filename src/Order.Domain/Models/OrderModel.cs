@@ -7,7 +7,7 @@ using Shared.Domain.Enums;
 
 namespace Order.Domain.Models;
 
-public class Order
+public class OrderModel
 {
     public long Id { get; set; }
     public OrderStatus Status { get; set; }

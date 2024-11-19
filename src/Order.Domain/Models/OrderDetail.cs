@@ -13,7 +13,7 @@ public class OrderDetail
     public long ProductId { get; set; }
     public string ProductName { get; set; }
     public int Quatity { get; set; }
-    public int UnitValue { get; set; }
+    public float UnitValue { get; set; }
     public float Total { get; set; }
     public DateTime CreatedAt { get; set; }
 }
