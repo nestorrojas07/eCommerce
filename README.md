@@ -45,7 +45,7 @@ uml models
 AWS proposal infraestructure
 ![aws proposal](./assets/e-commerce-aws-infraestructure.png)
 
-[diagrams documentation](./e-commerce-diagrams.drawio)
+[diagrams documentation](./assets/e-commerce-diagrams.drawio)
 
 
 ## License
