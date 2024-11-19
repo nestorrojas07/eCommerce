@@ -34,8 +34,9 @@ git clone https://github.com/nestorrojas07/eCommerce.git
 cd eCommerce
 docker-compose up --build
 ```
-[Products swagger](http://localhost:8090/swagger/index.html)
-[Orders swagger](http://localhost:8091/swagger/index.html)
+Endpoints:
+ - Products swagger: [Products swagger](http://localhost:8090/swagger/index.html)
+ - Orders Swagger: [Orders swagger](http://localhost:8091/swagger/index.html)
 
 ## Local Test
 
