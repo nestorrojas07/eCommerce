@@ -37,6 +37,15 @@ docker-compose up --build
 [Products swagger](http://localhost:8090/swagger/index.html)
 [Orders swagger](http://localhost:8091/swagger/index.html)
 
+## Local Test
+
+- You need a postgresql 16 running and set the connection string at:
+ * src/Order.API/appsettings.Development.json
+ * src/Catalog.API/appsettings.Development.json
+
+- You need sdk net 8.0
+- Visual Studio
+
 ## Architecture
 
 uml models
