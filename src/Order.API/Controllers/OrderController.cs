@@ -80,9 +80,9 @@ namespace Order.API.Controllers
         }
 
         [HttpGet("{orderId}/items")]
-        public async Task<ActionResult<PaginatedData<OrderDetail>>> GetItemAsync([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
+        public async Task<ActionResult<PaginatedData<OrderDetail>>> GetItemAsync([FromRoute] long orderId, [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
-            return Ok(await _orderService.GetItemAsync(pageNumber, pageSize));
+            return Ok(await _orderService.GetItemAsync(orderId, pageNumber, pageSize));
         }
 
         [HttpPost("{orderId}/items")]

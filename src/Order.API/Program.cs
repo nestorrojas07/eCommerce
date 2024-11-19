@@ -5,6 +5,7 @@ using Order.Services;
 using Order.Infraestructure;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Configuration.AddEnvironmentVariables();
 
 builder.Services.AddPresentation()
     .AddInfraestructure(builder.Configuration)

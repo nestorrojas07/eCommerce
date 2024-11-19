@@ -6,6 +6,7 @@ using Catalog.Infraestructure;
 using Catalog.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Configuration.AddEnvironmentVariables();
 var withApiVersioning = builder.Services.AddApiVersioning();
 //builder.AddDefaultOpenApi(withApiVersioning);
 

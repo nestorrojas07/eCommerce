@@ -26,6 +26,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{EB9AA828-FD54-4624-8053-3A1C1BB27480}"
 	ProjectSection(SolutionItems) = preProject
 		dev-hints.md = dev-hints.md
+		docker-compose.yaml = docker-compose.yaml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Services", "src\Order.Services\Order.Services.csproj", "{8F68802A-2EB2-42CF-8153-C8EA4936CED1}"

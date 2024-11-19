@@ -23,6 +23,8 @@ public class OrderContext : DbContext
         builder.ApplyConfiguration(new OrderEntityTypeConfiguration());
 
         builder.ApplyConfiguration(new OrderDetailEntityTypeConfiguration());
+
+        base.OnModelCreating(builder);
     }
 
 

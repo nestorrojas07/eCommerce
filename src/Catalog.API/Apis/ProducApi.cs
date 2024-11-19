@@ -18,14 +18,14 @@ public static class ProducApi
 {
     public static IEndpointRouteBuilder MapCatalogApiV1(this IEndpointRouteBuilder app)
     {
-        var api = app.MapGroup("api/products/");
+        var api = app.MapGroup("api");
 
         // Routes for querying catalog items.
-        api.MapPost("/products", CreateItem);
-        api.MapGet("/products", GetAllItems);
-        api.MapGet("/products/{id:int}", GetItemById);
-        api.MapPut("/products/{id:int}", UpdateItem);
-        api.MapDelete("/products/{id:int}", DeleteItemById);
+        api.MapPost("products", CreateItem);
+        api.MapGet("products", GetAllItems);
+        api.MapGet("products/{id:int}", GetItemById);
+        api.MapPut("products/{id:int}", UpdateItem);
+        api.MapDelete("products/{id:int}", DeleteItemById);
 
         return app;
     }

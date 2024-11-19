@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using Order.Domain.Contracts.Repositories;
 using Order.Domain.Models;
 using Shared.Domain.Dtos.Response;
@@ -30,12 +31,14 @@ public class OrderDetailRepository : IOrderDetailRepository
         return false;
     }
 
-    public async Task<PaginatedData<OrderDetail>> GetAsync(int pageNumber = 1, int pageSize = 100, CancellationToken cancellationToken = default)
+    public async Task<PaginatedData<OrderDetail>> GetAsync(long orderId, int pageNumber = 1, int pageSize = 100, CancellationToken cancellationToken = default)
     {
         var totalItems = await _context.OrderDetails
+            .Where(o => o.OrderId == orderId)
            .LongCountAsync();
 
         var items = await _context.OrderDetails
+          .Where(o => o.OrderId == orderId)
          .OrderBy(e => e.Id)
          .Skip((pageNumber - 1) * pageSize)
          .Take(pageSize)

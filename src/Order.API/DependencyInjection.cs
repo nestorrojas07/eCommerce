@@ -25,7 +25,7 @@ public static class DependencyInjection
 
     public static IServiceCollection AddValidators(this IServiceCollection services)
     {
-        services.AddScoped<IValidator<CreateOrderRequest>, CreateOrderRequestValidator>();
+        services.AddScoped<IValidator<UpdateOrderRequest>, UpdateOrderRequestValidator>();
         services.AddScoped<IValidator<CreateOrderRequest>, CreateOrderRequestValidator>();
         services.AddScoped<IValidator<AddOrderDetailRequest>, AddOrderDetailRequestValidator>();
         services.AddScoped<IValidator<UpdateOrderDetailRequest>, UpdateOrderDetailRequestValidator>();

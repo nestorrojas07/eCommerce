@@ -105,7 +105,7 @@ public class OrderService
         if (order == null)
             throw new KeyNotFoundException($"Order {orderId} not found");
 
-        return await _orderDetailRepository.GetAsync(pageNumber, pageSize, cancellationToken);
+        return await _orderDetailRepository.GetAsync(orderId, pageNumber, pageSize, cancellationToken);
     }
 
     public async Task<OrderDetail> AddItemAsync(long orderId, AddOrderDetail orderDetail)

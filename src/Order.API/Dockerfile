@@ -1,4 +1,3 @@
-# Consulte https://aka.ms/customizecontainer para aprender a personalizar su contenedor de depuración y cómo Visual Studio usa este Dockerfile para compilar sus imágenes para una depuración más rápida.
 
 # Esta fase se usa cuando se ejecuta desde VS en modo rápido (valor predeterminado para la configuración de depuración)
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
@@ -12,6 +11,10 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
+COPY ["src/Shared.Domain/Shared.Domain.csproj", "src/Shared.Domain/"]
+COPY ["src/Order.Domain/Order.Domain.csproj", "src/Order.Domain/"]
+COPY ["src/Order.Infraestructure/Order.Infraestructure.csproj", "src/Order.Infraestructure/"]
+COPY ["src/Order.Services/Order.Services.csproj", "src/Order.Services/"]
 COPY ["src/Order.API/Order.API.csproj", "src/Order.API/"]
 RUN dotnet restore "./src/Order.API/Order.API.csproj"
 COPY . .
