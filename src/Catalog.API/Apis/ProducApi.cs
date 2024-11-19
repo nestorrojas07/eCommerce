@@ -18,30 +18,14 @@ public static class ProducApi
 {
     public static IEndpointRouteBuilder MapCatalogApiV1(this IEndpointRouteBuilder app)
     {
-        var api = app.MapGroup("api/products/");
+        var api = app.MapGroup("api");
 
         // Routes for querying catalog items.
-        api.MapPost("/products", CreateItem);
-        api.MapGet("/products", GetAllItems);
-        api.MapGet("/products/{id:int}", GetItemById);
-        api.MapPut("/products/{id:int}", UpdateItem);
-        api.MapDelete("/products/{id:int}", DeleteItemById);
-        /**api.MapGet("/items/by/{name:minlength(1)}", GetItemsByName);
-        api.MapGet("/items/{catalogItemId:int}/pic", GetItemPictureById);
-
-        // Routes for resolving catalog items using AI.
-        api.MapGet("/items/withsemanticrelevance/{text:minlength(1)}", GetItemsBySemanticRelevance);
-
-        // Routes for resolving catalog items by type and brand.
-        api.MapGet("/items/type/{typeId}/brand/{brandId?}", GetItemsByBrandAndTypeId);
-        api.MapGet("/items/type/all/brand/{brandId:int?}", GetItemsByBrandId);
-        api.MapGet("/catalogtypes", async (CatalogContext context) => await context.CatalogTypes.OrderBy(x => x.Type).ToListAsync());
-        api.MapGet("/catalogbrands", async (CatalogContext context) => await context.CatalogBrands.OrderBy(x => x.Brand).ToListAsync());
-
-        // Routes for modifying catalog items.
-        
-        
-        api.MapDelete("/items/{id:int}", DeleteItemById);**/
+        api.MapPost("products", CreateItem);
+        api.MapGet("products", GetAllItems);
+        api.MapGet("products/{id:int}", GetItemById);
+        api.MapPut("products/{id:int}", UpdateItem);
+        api.MapDelete("products/{id:int}", DeleteItemById);
 
         return app;
     }

@@ -1,14 +1,11 @@
-using Catalog.API;
-using Catalog.API.Apis;
-using Catalog.API.Extensions;
-using Catalog.API.Middlewares;
-using Catalog.Infraestructure;
-using Catalog.Services;
+using Order.API;
+using Order.API.Extensions;
+using Order.API.Middlewares;
+using Order.Services;
+using Order.Infraestructure;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddEnvironmentVariables();
-var withApiVersioning = builder.Services.AddApiVersioning();
-//builder.AddDefaultOpenApi(withApiVersioning);
 
 builder.Services.AddPresentation()
     .AddInfraestructure(builder.Configuration)
@@ -27,7 +24,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseMiddleware<GloblalExceptionHandlingMiddleware>();
 
-app.MapCatalogApiV1();
+app.UseAuthorization();
+
+app.MapControllers();
 
 app.Run();
-
